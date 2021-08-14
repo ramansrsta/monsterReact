@@ -6,7 +6,7 @@ const SearchBox = props => {
         <input
         className='search'
         type = 'search'
-        placeholder = 'Input your search Term'
+        placeholder = 'Input Genre For Search'
         onChange={ props.changed }
         />
     )

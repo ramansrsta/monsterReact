@@ -9,7 +9,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users/')
+    fetch('https://book-set-task.herokuapp.com/api/list_books')
     .then(response => response.json())
     .then(users => this.setState({
       monsters : users,
@@ -25,12 +25,12 @@ class App extends Component {
 
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster => 
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
+      monster.genre.toLowerCase().includes(searchField.toLowerCase())
     )
 
     return (
       <div className="App">
-         <h1> Monster Rolodex </h1>
+         <h1> Book Store </h1>
         <SearchBox changed={this.inputChangeHandler} />
         <CardList monsters={filteredMonsters} />
       </div>
